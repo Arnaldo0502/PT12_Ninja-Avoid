@@ -1,35 +1,59 @@
-# Drop
+# Ninja Avoid 🥷
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+**Ninja Avoid** és un joc d'acció i reflexos desenvolupat amb el framework [libGDX](https://libgdx.com/). L'objectiu principal és controlar un ninja i esquivar els shurikens que cauen constantment per sobreviure el màxim temps possible.
 
-This project was generated with a template including simple application launchers and an empty `ApplicationListener` implementation.
+## 📝 Descripció del Projecte
 
-## Platforms
+Aquest projecte ha estat creat com a part de la **PT12** del mòdul de Desenvolupament d'Aplicacions Multiplataforma (DAM). Utilitza la potència de libGDX per oferir una experiència de joc fluida tant en escriptori com en dispositius Android.
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
-- `android`: Android mobile platform. Needs Android SDK.
+### Característiques principals:
+- **Mecànica de Joc:** Esquiva shurikens per mantenir les teves vides.
+- **Sistema de Puntuació:** Guanya punts a mesura que sobrevius al temps.
+- **Gestió de Vides:** Tens un nombre limitat de vides; si et toquen massa vegades, la partida s'acaba.
+- **Interfície Gràfica:** Inclou pantalles de presentació (Splash), menú principal i pantalla de joc.
+- **Àudio:** Música ambiental i efectes de so integrats.
 
-## Gradle
+## 🛠️ Estructura del Projecte
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
+El projecte està dividit en diversos mòduls per facilitar la portabilitat:
 
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `android:lint`: performs Android project validation.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
+- **`core`**: Conté tota la lògica del joc, actors, pantalles i gestió d'assets. És el codi compartit.
+- **`android`**: Configuració específica per a l'execució en dispositius Android.
+- **`lwjgl3`**: Configuració per a l'execució en escriptori (Windows, macOS, Linux).
 
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+## 🚀 Com executar el joc
+
+Aquest projecte utilitza **Gradle**. Pots utilitzar el wrapper inclòs (`./gradlew` a Linux/macOS o `gradlew.bat` a Windows).
+
+### Escriptori (Desktop)
+Per executar el joc en el teu ordinador:
+```bash
+./gradlew lwjgl3:run
+```
+
+### Android
+Per instal·lar i executar el joc en un dispositiu o emulador connectat:
+```bash
+./gradlew android:installDebug
+```
+
+### Generar executable (JAR)
+Si vols generar un fitxer executable per a escriptori:
+```bash
+./gradlew lwjgl3:jar
+```
+
+## 🎮 Controls
+
+- **Ratolí / Pantalla tàctil:** Arrossega el ninja o prem a la pantalla per moure'l i evitar els shurikens.
+- **Inici:** Fes clic a la pantalla del menú principal per començar l'acció.
+
+## 📦 Tecnologies utilitzades
+
+- **Llenguatge:** Java
+- **Framework:** libGDX
+- **Gestor de dependències:** Gradle
+- **Eines:** gdx-liftoff
+
+---
+*Desenvolupat per Arnau Figueres*
